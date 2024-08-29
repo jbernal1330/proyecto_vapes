@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App - Sign In</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div class="header">
+        <span class="app-title">Los Vaperos 4.0</span>
+        <a href="index.html">
+            <img src="Images/vape 2.png" class="user-icon" alt="User Icon">
+        </a>
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <h2>Sign In</h2>
+            <form onsubmit="event.preventDefault(); sendLoginData();">
+                <div class="textbox">
+                    <input type="number" placeholder="ID" name="ID" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+        </div>
+    </div>
+<script>
+
+function sendLoginData() {
+    const username = document.getElementById('id').value;
+    const password = document.getElementById('password').value;
+
+    const data = {
+        username: username,
+        password: password
+    };
+
+    axios.post('https://tu-backend.com/login', data)
+        .then(response => {
+            console.log('Login successful:', response.data);
+        })
+        .catch(error => {
+            console.error('Error during login:', error);
+        });
+}
+
+</script>
+</body>
+</html>
