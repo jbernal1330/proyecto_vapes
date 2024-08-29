@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App - Register</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div class="header">
+        <span class="app-title">Los Vaperos 4.0</span>
+        <a href="index.html">
+            <img src="Images/vape 2.png" class="user-icon" alt="User Icon">
+        </a>
+    </div>
+    <div class="container">
+        <div class="register-box">
+            <h2>Register</h2>
+            <form onsubmit="event.preventDefault(); sendRegisterData();">
+                <div class="textbox">
+                    <input type="text" placeholder="Username" id="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Sign In</a></p>
+        </div>
+    </div>
+<script>
+
+function sendRegisterData() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const data = {
+        username: username,
+        password: password
+    };
+
+    axios.post('http://localhost:8080/userAuth/register', data)
+        .then(response => {
+            console.log('Registration successful:', response.data);
+        })
+        .catch(error => {
+            console.error('Error during registration:', error);
+        });
+}
+
+</script>
+</body>
+</html>

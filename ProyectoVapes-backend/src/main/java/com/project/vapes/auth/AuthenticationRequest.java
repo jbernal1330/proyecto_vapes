@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 // y contraseña del usuario --> login)
 public class AuthenticationRequest {
 
-  private String email;
+  private String username;
   private String password;
 }

@@ -26,9 +26,7 @@ public class AuthenticationService {
         // Registro de usuarios --> Se crea el usuario y se genera el token
         public AuthenticationResponse register(RegisterRequest request) {
                 var user = User.builder()
-                                .name(request.getName())
                                 .username(request.getUsername())
-                                .email(request.getEmail())
                                 .password(passwordEncoder.encode(request.getPassword()))
                                 .role(request.getRole())
                                 .build();
@@ -51,10 +49,9 @@ public class AuthenticationService {
         public AuthenticationResponse authenticate(AuthenticationRequest request) {
                 authenticationManager.authenticate(
                                 new UsernamePasswordAuthenticationToken(
-                                                request.getEmail(),
+                                                request.getUsername(),
                                                 request.getPassword()));
-                var user = repository.findByEmail(request.getEmail())
-                                .orElseThrow();
+                var user = repository.findByUsername(request.getUsername());
 
                 var jwtToken = jwtService.generateToken(user);
                 var refreshToken = jwtService.generateRefreshToken(user);

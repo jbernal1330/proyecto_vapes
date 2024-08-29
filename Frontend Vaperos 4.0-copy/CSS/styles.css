@@ -1,0 +1,259 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0A1E2E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    background-color: #0A94C1;
+    padding: 12px 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.app-title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.close-btn {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.close-btn:hover {
+    color: #ffcccc;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: 60px;
+    flex-direction: column;
+}
+
+/* Estilos para las páginas de login y registro */
+.login-box, .register-box {
+    background-color: #0E2A3D;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    text-align: center;
+    width: 300px;
+}
+
+h2 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.textbox {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    background: #1E3A4B;
+    border: none;
+    border-bottom: 1px solid #0A94C1;
+    outline: none;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.btn {
+    width: 100%;
+    background: #0A94C1;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #0884AF;
+}
+
+p {
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+p a {
+    color: #0A94C1;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para index.html */
+.user-icon {
+    width: 24px; /* Ajusta el tamaño según sea necesario */
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.user-icon:hover {
+    opacity: 0.7; /* Añade un efecto hover si lo deseas */
+}
+
+.index-page {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.index-page h2 {
+    margin: 20px 0;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.index-page .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.index-page .card {
+    background-color: #0E2A3D;
+    border: 1px solid #0A94C1;
+    border-radius: 15px;
+    padding: 20px;
+    width: 220px;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none; /* Elimina subrayado */
+    color: inherit; /* Mantiene el color del texto */
+}
+
+.index-page .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer; /* Cambia el cursor a una mano al pasar */
+}
+
+.index-page .card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.index-page .card .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #0A94C1;
+}
+
+.index-page .card p {
+    color: #a1b9c6;
+    font-size: 14px;
+}
+
+/* Estilos para addProducts.html */
+.add-product-form {
+    width: 400px;
+    background-color: #0E2A3D;
+    padding: 30px;  /* Ajuste del padding */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    text-align: center;
+    margin: 80px auto; /* Centrado vertical */
+}
+
+.add-product-form h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.add-product-form .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Aumenta el margen inferior para más espacio */
+}
+
+.add-product-form .textbox {
+    width: 45%;
+    margin-bottom: 15px; /* Añade un margen inferior para espacio entre las filas */
+}
+
+.add-product-form .textbox input,
+.add-product-form .textbox select {
+    width: 100%;
+    padding: 8px; /* Ajuste del padding para menos altura */
+    background: #1E3A4B;
+    border: none;
+    border-bottom: 1px solid #0A94C1;
+    outline: none;
+    color: #ffffff;
+    font-size: 14px;  /* Ajuste del tamaño de la fuente */
+    border-radius: 5px;
+}
+
+.add-product-form .checkbox-container {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 20px; /* Añade un margen inferior para espacio entre las filas */
+}
+
+.add-product-form .checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+.add-product-form .btn {
+    width: 100%;
+    background: #0A94C1;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.add-product-form .btn:hover {
+    background: #0884AF;
+}

@@ -30,9 +30,7 @@ public class User implements UserDetails {
     @GeneratedValue
     private int id;
 
-    private String name;
     private String username;
-    private String email;
     private String password;
 
     @OneToMany(mappedBy = "user")
@@ -40,14 +38,6 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private UserRole role;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getId() {
         return id;
@@ -63,14 +53,6 @@ public class User implements UserDetails {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {

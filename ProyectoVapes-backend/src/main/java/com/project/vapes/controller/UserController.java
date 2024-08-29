@@ -17,10 +17,6 @@ public class UserController {
 
     @PostMapping("/user")
     User newUser(@RequestBody User newUser) {
-        if (userRepository.existsByEmail(newUser.getEmail())) {
-            throw new UserAlreadyExistsException("User with this email already exists.");
-        }
-
         if (userRepository.existsByUsername(newUser.getUsername())) {
             throw new UserAlreadyExistsException("User with this username already exists.");
         }
@@ -48,9 +44,7 @@ public class UserController {
     User updateUser(@RequestBody User newUser, @PathVariable Integer id) {
         return userRepository.findById(id)
                 .map(user -> {
-                    user.setName(newUser.getName());
                     user.setUsername(newUser.getUsername());
-                    user.setEmail(newUser.getEmail());
                     return userRepository.save(user);
                 }).orElseThrow(() -> new UserNotFoundException(id));
     }
