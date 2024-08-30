@@ -11,16 +11,10 @@ import org.springframework.data.jpa.repository.Query;
 public interface UserRepository extends JpaRepository<User, Integer> {
     long count();
 
-    // Check if a user with the given email exists
-    boolean existsByEmail(String email);
-
     // Check if a user with the given username exists
     boolean existsByUsername(String username);
 
-    // Retorna el usuario si se encuentra en el repositorio
-    Optional<User> findByEmail(String email);
-
-    User findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
     @Query("SELECT DISTINCT u FROM User u " +
             "JOIN FETCH u.tokens t " +

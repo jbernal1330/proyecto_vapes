@@ -51,7 +51,7 @@ public class AuthenticationService {
                                 new UsernamePasswordAuthenticationToken(
                                                 request.getUsername(),
                                                 request.getPassword()));
-                var user = repository.findByUsername(request.getUsername());
+                var user = repository.findByUsername(request.getUsername()).orElseThrow();
 
                 var jwtToken = jwtService.generateToken(user);
                 var refreshToken = jwtService.generateRefreshToken(user);

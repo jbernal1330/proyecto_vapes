@@ -23,7 +23,7 @@
                 <div class="textbox">
                     <input type="password" placeholder="Password" id="password" required>
                 </div>
-                <button type="submit" class="btn">Register</button>
+                <button type="submit" class="btn" href="index.html">Register</button>
             </form>
             <p>Already have an account? <a href="login.html">Sign In</a></p>
         </div>
@@ -33,7 +33,6 @@
 function sendRegisterData() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-
     const data = {
         username: username,
         password: password
@@ -46,6 +45,8 @@ function sendRegisterData() {
         .catch(error => {
             console.error('Error during registration:', error);
         });
+    
+    
 }
 
 </script>
