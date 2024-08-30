@@ -144,10 +144,11 @@ p a:hover {
 
 .index-page .cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     max-width: 1000px;
     width: 100%;
+    gap: 20px; /* Espacio entre las tarjetas */
 }
 
 .index-page .card {
@@ -156,12 +157,21 @@ p a:hover {
     border-radius: 15px;
     padding: 20px;
     width: 220px;
-    margin: 15px;
+    margin: 10px; /* Ajusta este valor para equilibrar el espacio */
     text-align: center;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
     text-decoration: none; /* Elimina subrayado */
     color: inherit; /* Mantiene el color del texto */
+}
+
+/* Restablece márgenes negativos */
+.index-page .card:nth-child(4) {
+    margin-right: 10px; /* Ajusta el margen a un valor positivo */
+}
+
+.index-page .card:nth-child(5) {
+    margin-left: 10px; /* Ajusta el margen a un valor positivo */
 }
 
 .index-page .card:hover {
