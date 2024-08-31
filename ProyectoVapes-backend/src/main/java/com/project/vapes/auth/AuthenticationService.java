@@ -26,7 +26,10 @@ public class AuthenticationService {
         // Registro de usuarios --> Se crea el usuario y se genera el token
         public AuthenticationResponse register(RegisterRequest request) {
                 var user = User.builder()
-                                .username(request.getUsername())
+                                .id(request.getId())
+                                .fname(request.getFname())
+                                .lname(request.getLname())
+                                .username(String.valueOf(request.getId()))
                                 .password(passwordEncoder.encode(request.getPassword()))
                                 .role(request.getRole())
                                 .build();

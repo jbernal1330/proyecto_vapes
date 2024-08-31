@@ -8,11 +8,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.project.vapes.token.Token;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -28,9 +27,11 @@ import lombok.NoArgsConstructor;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    private String fname;
+    private String lname;
+    @Column(unique = true)
     private String username;
     private String password;
 
@@ -46,6 +47,22 @@ public class User implements UserDetails {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String Fname) {
+        this.fname = Fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String Lname) {
+        this.lname = Lname;
     }
 
     public String getUsername() {

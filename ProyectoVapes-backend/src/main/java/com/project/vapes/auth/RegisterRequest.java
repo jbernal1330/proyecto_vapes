@@ -15,7 +15,9 @@ import lombok.NoArgsConstructor;
 // Apoya la creación de un nuevo usuario así como su respectivo token
 public class RegisterRequest {
 
-    private String username;
+    private int id;
+    private String fname;
+    private String lname;
     private String password;
     private UserRole role;
 }
