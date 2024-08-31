@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Configuración de metadatos y enlaces a recursos externos -->
+    <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración para diseño responsivo -->
+    <title>Agregar usuarios</title> <!-- Título de la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconexión a Google Fonts para mejorar rendimiento -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconexión con soporte para CORS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet"> <!-- Enlace a las fuentes Krub y Space Mono desde Google Fonts -->
+    <link rel="preload" href="CSS/styleAgregarEmpleado.css" as="style"> <!-- Precarga del archivo CSS principal -->
+    <link rel="stylesheet" href="CSS/styleAgregarEmpleado.css"> <!-- Enlace al archivo CSS principal -->
+</head>
+
+<body>
+    <!-- Contenedor para el título principal de la página -->
+    <div class="titulo-agregar">
+        <h1>Agregar usuarios</h1> <!-- Título de la página -->
+    </div>
+
+    <!-- Sección para agregar un nuevo usuario -->
+    <div class="formulario-agregar">
+        <h2>Agregar usuario</h2> <!-- Subtítulo de la sección -->
+
+        <!-- Formulario para agregar un usuario -->
+        <form>
+            <!-- Grupo de campos para el nombre y apellido del empleado -->
+            <div class="grupo-datos-agregar">
+                <!-- Campo para ingresar el nombre del empleado -->
+                <div class="campo-especifico-agregar">
+                    <label>Nombre del empleado</label> <!-- Etiqueta para el nombre -->
+                    <input type="text" placeholder="Primer nombre" class="campo-texto-agregar">
+                    <!-- Input para el nombre del empleado -->
+                </div>
+                <!-- Campo para ingresar el apellido del empleado -->
+                <div class="campo-especifico-agregar">
+                    <label>Apellido del empleado</label> <!-- Etiqueta para el apellido -->
+                    <input type="text" placeholder="Primer apellido" class="campo-texto-agregar">
+                    <!-- Input para el apellido del empleado -->
+                </div>
+            </div>
+
+            <!-- Grupo de campos para el ID y rol del empleado -->
+            <div class="grupo-datos-agregar">
+                <!-- Campo para ingresar el ID del empleado -->
+                <div class="campo-especifico-agregar">
+                    <label>ID</label> <!-- Etiqueta para el ID -->
+                    <input type="text" placeholder="Cédula del empleado" class="campo-texto-agregar">
+                    <!-- Input para el ID del empleado -->
+                </div>
+                <!-- Selector para elegir el rol del empleado -->
+                <div class="campo-especifico-agregar">
+                    <label>Rol del empleado</label> <!-- Etiqueta para el rol -->
+                    <select class="campo-texto-agregar"> <!-- Selector para el rol del empleado -->
+                        <option value="">Rol del empleado</option> <!-- Opción vacía por defecto -->
+                        <option value="tipo1">user</option> <!-- Opción para el rol de usuario -->
+                        <option value="tipo2">admin</option> <!-- Opción para el rol de administrador -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Campo para la contraseña del empleado -->
+            <div class="grupo-datos-agregar">
+                <div class="campo-especifico-agregar">
+                    <label>Contraseña</label> <!-- Etiqueta para la contraseña -->
+                    <input type="password" placeholder="Contraseña del empleado" class="campo-password-agregar">
+                    <!-- Input para la contraseña del empleado -->
+                </div>
+            </div>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit" class="btn-agregar">Agregar</button>
+            <!-- Botón para agregar el usuario -->
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Configuración de metadatos y enlaces a recursos externos -->
+    <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración para responsive design -->
+    <title>Visualizacion empleado</title> <!-- Título de la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconexión a Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconexión con soporte para CORS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet"> <!-- Enlace a las fuentes Krub y Space Mono desde Google Fonts -->
+    <link rel="preload" href="CSS/styleVisualizarEmpleado.css" as="style"> <!-- Precarga del archivo CSS principal -->
+    <link rel="stylesheet" href="CSS/styleVisualizarEmpleado.css"> <!-- Enlace al archivo CSS principal -->
+</head>
+
+<body>
+    <!-- Contenedor para el título y la barra de búsqueda -->
+    <div class="titulo-visualizar">
+        <h1>Visualizacion empleado</h1> <!-- Título de la página -->
+
+        <!-- Contenedor de la barra de búsqueda -->
+        <div class="barra-busqueda-visualizar">
+            <!-- Ícono de búsqueda SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="44" height="44"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="#CCFFFF" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" /> <!-- Forma del ícono -->
+                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /> <!-- Círculo del ícono -->
+                <path d="M21 21l-6 -6" /> <!-- Línea del ícono que simboliza una lupa -->
+            </svg>
+            <!-- Campo de entrada para búsqueda -->
+            <input type="text" placeholder="Buscar empleado . . ." class="buscar-visualizar">
+        </div>
+    </div>
+
+    <!-- Contenedor para la tabla de empleados -->
+    <div>
+        <table>
+            <thead>
+                <tr> <!-- Encabezados de la tabla -->
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>ID</th>
+                    <th>Rol</th>
+                    <th>Contraseña</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %} <!-- Bucle para generar filas dinámicamente -->
+                <tr>
+                    <td>{{ row[0] }}</td> <!-- Nombre del empleado -->
+                    <td>{{ row[1] }}</td> <!-- Apellido del empleado -->
+                    <td>{{ row[2] }}</td> <!-- ID del empleado -->
+                    <td>{{ row[3] }}</td> <!-- Rol del empleado -->
+                    <td>{{ row[4] }}</td> <!-- Contraseña del empleado -->
+                    <td><button class="btn-visualizar">Visualizar</button></td>
+                    <!-- Botón para visualizar el empleado -->
+                </tr>
+                {% endfor %} <!-- Fin del bucle -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Sección para visualizar un empleado -->
+    <div class="formulario-visualizar">
+        <h2>Visualizacion empleados</h2> <!-- Subtítulo de la sección -->
+
+        <form>
+            <!-- Grupo de campos para el nombre y apellido del empleado -->
+            <div class="grupo-datos-visualizar">
+                <!-- Campo para mostrar el nombre del empleado -->
+                <div class="campo-especifico-visualizar">
+                    <label>Nombre del empleado</label> <!-- Etiqueta para el nombre -->
+                    <input type="text" placeholder="Primer nombre" class="campo-texto-visualizar" readonly>
+                    <!-- Input para mostrar el nombre del empleado -->
+                </div>
+                <!-- Campo para mostrar el apellido del empleado -->
+                <div class="campo-especifico-visualizar">
+                    <label>Apellido del empleado</label> <!-- Etiqueta para el apellido -->
+                    <input type="text" placeholder="Primer apellido" class="campo-texto-visualizar" readonly>
+                    <!-- Input para mostrar el apellido del empleado -->
+                </div>
+            </div>
+
+            <!-- Grupo de campos para el ID y rol del empleado -->
+            <div class="grupo-datos-visualizar">
+                <!-- Campo para mostrar el ID del empleado -->
+                <div class="campo-especifico-visualizar">
+                    <label>ID</label> <!-- Etiqueta para el ID -->
+                    <input type="text" placeholder="Cédula del empleado" class="campo-texto-visualizar" readonly>
+                    <!-- Input para mostrar el ID del empleado -->
+                </div>
+                <!-- Selector para mostrar el rol del empleado -->
+                <div class="campo-especifico-visualizar">
+                    <label>Rol del empleado</label> <!-- Etiqueta para el rol -->
+                    <select class="campo-texto-visualizar" disabled> <!-- Selector para mostrar el rol del empleado -->
+                        <option value="">Rol del empleado</option> <!-- Opción vacía por defecto -->
+                        <option value="tipo1">user</option> <!-- Opción para el rol de usuario -->
+                        <option value="tipo2">admin</option> <!-- Opción para el rol de administrador -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Campo para mostrar la contraseña del empleado -->
+            <div class="grupo-datos-visualizar">
+                <div class="campo-especifico-visualizar">
+                    <label>Contraseña</label> <!-- Etiqueta para la contraseña -->
+                    <input type="password" placeholder="Contraseña del empleado" class="campo-password-visualizar"
+                        readonly>
+                    <!-- Input para mostrar la contraseña del empleado -->
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

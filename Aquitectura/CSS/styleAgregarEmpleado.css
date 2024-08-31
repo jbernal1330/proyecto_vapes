@@ -1,0 +1,153 @@
+/* Variables CSS para colores */
+:root {
+  --azulFondo: #000F1F;
+  /* Color de fondo principal */
+  --barraBusqueda: #265973;
+  /* Color de fondo para la barra de búsqueda */
+  --letraseiconos: #CCFFFF;
+  /* Color para letras e iconos */
+  --accionBoton: #26A3D9;
+  /* Color para acciones de botón */
+}
+
+/* Configuración global para el HTML */
+html {
+  font-size: 65.5%;
+  /* Tamaño base de fuente */
+  box-sizing: border-box;
+  /* Incluye padding y borde en el cálculo de ancho */
+}
+
+/* Aplica box-sizing a todos los elementos y pseudo-elementos */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  /* Hereda box-sizing del elemento padre */
+}
+
+/* Estilos para el body */
+body {
+  padding-top: 5rem;
+  /* Espaciado superior */
+  padding-left: 10rem;
+  /* Espaciado izquierdo */
+  padding-right: 10rem;
+  /* Espaciado derecho */
+  font-family: "Space Mono", monospace;
+  /* Fuente de texto */
+  background-color: var(--azulFondo);
+  /* Color de fondo */
+  font-size: 16px;
+  /* Tamaño de fuente */
+  color: var(--letraseiconos);
+  /* Color de texto */
+}
+
+/* Estilos para el contenedor del título */
+.titulo-agregar {
+  display: flex;
+  /* Uso de flexbox para el layout */
+  flex-direction: row;
+  /* Dirección de los elementos en fila */
+  align-items: center;
+  /* Alineación vertical de los elementos */
+  justify-content: space-between;
+  /* Distribución del espacio entre los elementos */
+}
+
+/* Estilos para la sección de agregar */
+.formulario-agregar {
+  padding: 0rem 30rem;
+  /* Espaciado a los lados */
+}
+
+/* Estilos para el contenedor de datos de agregar */
+.grupo-datos-agregar {
+  display: flex;
+  /* Uso de flexbox para el layout */
+  flex-direction: row;
+  /* Dirección de los elementos en fila */
+  align-items: center;
+  /* Alineación vertical */
+}
+
+/* Estilos para los elementos específicos dentro del grupo de datos de agregar */
+.campo-especifico-agregar {
+  display: flex;
+  /* Uso de flexbox para el layout */
+  flex-direction: column;
+  /* Dirección de los elementos en columna */
+  padding-bottom: 2.5rem;
+  /* Espaciado inferior */
+  width: 100%;
+  /* Ancho completo */
+}
+
+/* Espaciado inferior para las etiquetas dentro del grupo de datos de agregar */
+.grupo-datos-agregar label {
+  padding-bottom: 0.5rem;
+}
+
+/* Estilos para inputs y selects dentro del grupo de datos de agregar */
+.grupo-datos-agregar input,
+.grupo-datos-agregar select {
+  height: 4rem;
+  /* Altura de los inputs */
+  background-color: var(--azulFondo);
+  /* Color de fondo */
+  color: var(--letraseiconos);
+  /* Color del texto */
+  font-family: "Space Mono", monospace;
+  /* Fuente */
+  width: 27.5rem;
+  /* Ancho fijo */
+  border: 2px solid var(--barraBusqueda);
+  /* Borde */
+  padding: 0 1rem;
+  /* Espaciado interno */
+}
+
+/* Ancho completo para inputs con clase campo-password-agregar */
+.grupo-datos-agregar .campo-password-agregar {
+  width: 100%;
+  /* Ancho completo */
+}
+
+/* Estilos para el placeholder de inputs con clase campo-texto-agregar */
+.campo-texto-agregar::placeholder {
+  color: var(--letraseiconos);
+  /* Color del placeholder */
+}
+
+/* Estilos al enfocar inputs con clase campo-texto-agregar */
+.campo-texto-agregar:focus {
+  border-color: var(--letraseiconos);
+  /* Color del borde */
+  outline: none;
+  /* Sin contorno */
+}
+
+/* Estilos para el botón de agregar */
+.btn-agregar {
+  height: 4rem;
+  /* Altura del botón */
+  width: 100%;
+  /* Ancho completo */
+  background-color: var(--accionBoton);
+  /* Color de fondo */
+  color: var(--letraseiconos);
+  /* Color del texto */
+  font-family: "Space Mono", monospace;
+  /* Fuente */
+  font-size: 1.2rem;
+  /* Tamaño de fuente */
+  margin-top: 1rem;
+  /* Margen superior */
+}
+
+/* Cambio de fondo al pasar el cursor sobre el botón agregar */
+.btn-agregar:hover {
+  background-color: #1E8CB8;
+  /* Color de fondo al pasar el cursor */
+}
