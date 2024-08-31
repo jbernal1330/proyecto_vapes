@@ -21,6 +21,12 @@
                     <input type="number" placeholder="ID" id="ID" required>
                 </div>
                 <div class="textbox">
+                    <input type="text" placeholder="Nombre" id="firstName" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" placeholder="Apellido" id="lastName" required>
+                </div>
+                <div class="textbox">
                     <input type="password" placeholder="Password" id="password" required>
                 </div>
                 <button type="submit" class="btn">Register</button>
@@ -29,13 +35,16 @@
         </div>
     </div>
 <script>
-
 function sendRegisterData() {
-    const username = document.getElementById('id').value;
+    const id = document.getElementById('ID').value;
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
     const password = document.getElementById('password').value;
 
     const data = {
-        username: username,
+        id: id,
+        firstName: firstName,
+        lastName: lastName,
         password: password
     };
 
