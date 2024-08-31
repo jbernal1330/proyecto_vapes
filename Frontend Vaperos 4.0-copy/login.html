@@ -18,20 +18,23 @@
             <h2>Sign In</h2>
             <form onsubmit="event.preventDefault(); sendLoginData();">
                 <div class="textbox">
-                    <input type="number" placeholder="ID" name="ID" required>
+                    <input type="number" placeholder="ID" id="ID" required>
                 </div>
                 <div class="textbox">
-                    <input type="password" placeholder="Password" name="password" required>
+                    <input type="password" placeholder="Password" id="password" required>
                 </div>
                 <button type="submit" class="btn">Sign In</button>
             </form>
             <p>Don't have an account? <a href="register.html">Register</a></p>
         </div>
     </div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 <script>
 
 function sendLoginData() {
-    const username = document.getElementById('id').value;
+    const username = document.getElementById('ID').value;
     const password = document.getElementById('password').value;
 
     const data = {
@@ -39,9 +42,11 @@ function sendLoginData() {
         password: password
     };
 
-    axios.post('https://tu-backend.com/login', data)
+    axios.post('http://localhost:8080/userAuth/authenticate', data)
         .then(response => {
             console.log('Login successful:', response.data);
+            // Redireccionar a index.html
+            window.location.href = 'index.html';
         })
         .catch(error => {
             console.error('Error during login:', error);

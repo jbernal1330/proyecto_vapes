@@ -18,35 +18,49 @@
             <h2>Register</h2>
             <form onsubmit="event.preventDefault(); sendRegisterData();">
                 <div class="textbox">
-                    <input type="text" placeholder="Username" id="username" required>
+                    <input type="number" placeholder="ID" id="ID" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" placeholder="Nombre" id="firstName" required>
+                </div>
+                <div class="textbox">
+                    <input type="text" placeholder="Apellido" id="lastName" required>
                 </div>
                 <div class="textbox">
                     <input type="password" placeholder="Password" id="password" required>
                 </div>
-                <button type="submit" class="btn" href="index.html">Register</button>
+                <button type="submit" class="btn">Register</button>
             </form>
             <p>Already have an account? <a href="login.html">Sign In</a></p>
         </div>
     </div>
-<script>
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
 function sendRegisterData() {
-    const username = document.getElementById('username').value;
+    const id = document.getElementById('ID').value;
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
     const password = document.getElementById('password').value;
+
     const data = {
-        username: username,
-        password: password
+        id: id,
+        fname: firstName,
+        lname: lastName,
+        password: password,
+        role: "USER",
     };
 
     axios.post('http://localhost:8080/userAuth/register', data)
         .then(response => {
             console.log('Registration successful:', response.data);
+            // Redireccionar a index.html
+            window.location.href = 'index.html';
         })
         .catch(error => {
             console.error('Error during registration:', error);
         });
-    
-    
 }
 
 </script>
