@@ -118,16 +118,16 @@ p a:hover {
     text-decoration: underline;
 }
 
-/* Estilos específicos para index.html */
+/* Estilos específicos para index.html y userManagement.html */
 .user-icon {
-    width: 24px; /* Ajusta el tamaño según sea necesario */
+    width: 24px;
     height: 24px;
     margin-right: 10px;
     cursor: pointer;
 }
 
 .user-icon:hover {
-    opacity: 0.7; /* Añade un efecto hover si lo deseas */
+    opacity: 0.7;
 }
 
 .index-page {
@@ -148,64 +148,68 @@ p a:hover {
     flex-wrap: wrap;
     max-width: 1000px;
     width: 100%;
-    gap: 20px; /* Espacio entre las tarjetas */
+    gap: 20px;
 }
 
 .index-page .card {
     background-color: #0E2A3D;
-    border: 1px solid #0A94C1;
+    border: none;
     border-radius: 15px;
     padding: 20px;
     width: 220px;
-    margin: 10px; /* Ajusta este valor para equilibrar el espacio */
+    margin: 10px;
     text-align: center;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
-    text-decoration: none; /* Elimina subrayado */
-    color: inherit; /* Mantiene el color del texto */
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Restablece márgenes negativos */
-.index-page .card:nth-child(4) {
-    margin-right: 10px; /* Ajusta el margen a un valor positivo */
-}
-
-.index-page .card:nth-child(5) {
-    margin-left: 10px; /* Ajusta el margen a un valor positivo */
+.index-page .cards a {
+    border: none;
+    outline: none;
+    text-decoration: none;
 }
 
 .index-page .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer; /* Cambia el cursor a una mano al pasar */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .index-page .card h3 {
     color: #ffffff;
     font-size: 18px;
     margin-bottom: 15px;
+    border: none;
 }
 
 .index-page .card .icon {
     font-size: 40px;
     margin-bottom: 15px;
     color: #0A94C1;
+    border: none;
 }
 
 .index-page .card p {
     color: #a1b9c6;
     font-size: 14px;
+    border: none;
+}
+
+.index-page .cards a:focus {
+    outline: none;
 }
 
 /* Estilos para addProducts.html */
 .add-product-form {
     width: 400px;
     background-color: #0E2A3D;
-    padding: 30px;  /* Ajuste del padding */
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px #000;
     text-align: center;
-    margin: 80px auto; /* Centrado vertical */
+    margin: 80px auto;
 }
 
 .add-product-form h2 {
@@ -218,24 +222,24 @@ p a:hover {
 .add-product-form .form-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px; /* Aumenta el margen inferior para más espacio */
+    margin-bottom: 20px;
 }
 
 .add-product-form .textbox {
     width: 45%;
-    margin-bottom: 15px; /* Añade un margen inferior para espacio entre las filas */
+    margin-bottom: 15px;
 }
 
 .add-product-form .textbox input,
 .add-product-form .textbox select {
     width: 100%;
-    padding: 8px; /* Ajuste del padding para menos altura */
+    padding: 8px;
     background: #1E3A4B;
     border: none;
     border-bottom: 1px solid #0A94C1;
     outline: none;
     color: #ffffff;
-    font-size: 14px;  /* Ajuste del tamaño de la fuente */
+    font-size: 14px;
     border-radius: 5px;
 }
 
@@ -244,7 +248,7 @@ p a:hover {
     align-items: center;
     color: #ffffff;
     font-size: 16px;
-    margin-bottom: 20px; /* Añade un margen inferior para espacio entre las filas */
+    margin-bottom: 20px;
 }
 
 .add-product-form .checkbox-container input[type="checkbox"] {
