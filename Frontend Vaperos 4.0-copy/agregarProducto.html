@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Configuración de metadatos y enlaces a recursos externos -->
+    <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración para responsive design -->
+    <title>Agregar Producto</title> <!-- Título de la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconexión a Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconexión con soporte para CORS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet"> <!-- Enlace a las fuentes Krub y Space Mono desde Google Fonts -->
+    <link rel="preload" href="CSS/styleAgregarProducto.css" as="style"> <!-- Precarga del archivo CSS principal -->
+    <link rel="stylesheet" href="CSS/styleAgregarProducto.css"> <!-- Enlace al archivo CSS principal -->
+</head>
+
+<body>
+    <!-- Contenedor para el título -->
+    <div class="titulo-agregar">
+        <h1>Agregar producto</h1> <!-- Título de la página -->
+    </div>
+
+    <!-- Sección para agregar un producto -->
+    <div class="formulario-agregar">
+        <h2>Agregar Producto</h2> <!-- Subtítulo de la sección -->
+
+        <!-- Formulario para agregar productos -->
+        <form>
+            <!-- Grupo de campos para el nombre y cantidad -->
+            <div class="grupo-datos-agregar">
+                <div class="campo-especifico-agregar">
+                    <label>Nombre del producto</label> <!-- Etiqueta para el nombre -->
+                    <input type="text" placeholder="Nombre producto" class="campo-texto-agregar">
+                    <!-- Input para nombre del producto -->
+                </div>
+                <div class="campo-especifico-agregar">
+                    <label>Cantidad</label> <!-- Etiqueta para la cantidad -->
+                    <input type="number" placeholder="Cantidad del producto" class="campo-texto-agregar">
+                    <!-- Input para la cantidad -->
+                </div>
+            </div>
+
+            <!-- Grupo de campos para el precio y tipo de producto -->
+            <div class="grupo-datos-agregar">
+                <div class="campo-especifico-agregar">
+                    <label>Precio</label> <!-- Etiqueta para el precio -->
+                    <input type="text" placeholder="Precio del producto" class="campo-texto-agregar">
+                    <!-- Input para el precio -->
+                </div>
+                <div class="campo-especifico-agregar">
+                    <label>Tipo de producto</label> <!-- Etiqueta para el tipo -->
+                    <select class="campo-texto-agregar"> <!-- Selector para el tipo de producto -->
+                        <option value="">Tipo de producto</option> <!-- Opción vacía por defecto -->
+                        <option value="tipo1">Tipo 1</option> <!-- Opción tipo 1 -->
+                        <option value="tipo2">Tipo 2</option> <!-- Opción tipo 2 -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Campo para el ID único -->
+            <div class="grupo-datos-agregar">
+                <div class="campo-especifico-agregar">
+                    <label>ID único</label> <!-- Etiqueta para el ID -->
+                    <input type="text" placeholder="ID del producto" class="campo-id-agregar">
+                    <!-- Input para el ID único -->
+                </div>
+            </div>
+
+            <!-- Contenedor del checkbox y su etiqueta -->
+            <div class="contenedor-checkbox-agregar">
+                <input type="checkbox" id="nicotina" class="checkbox-agregar">
+                <!-- Checkbox para opción de nicotina -->
+                <label for="nicotina">Nicotina</label> <!-- Etiqueta asociada al checkbox -->
+            </div>
+
+            <!-- Grupo de campos para el sabor y tamaño -->
+            <div class="grupo-datos-agregar">
+                <div class="campo-especifico-agregar">
+                    <label>Sabor</label> <!-- Etiqueta para el sabor -->
+                    <input type="text" placeholder="Sabor del producto" class="campo-texto-agregar">
+                    <!-- Input para el sabor -->
+                </div>
+                <div class="campo-especifico-agregar">
+                    <label>Tamaño</label> <!-- Etiqueta para el tamaño -->
+                    <input type="text" placeholder="Tamaño del producto" class="campo-texto-agregar">
+                    <!-- Input para el tamaño -->
+                </div>
+            </div>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit" class="btn-agregar-formulario">Agregar</button>
+            <!-- Botón para agregar el producto -->
+        </form>
+    </div>
+
+</body>
+
+</html>

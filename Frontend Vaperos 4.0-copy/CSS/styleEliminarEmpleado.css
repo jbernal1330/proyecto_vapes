@@ -1,0 +1,283 @@
+/* VARIABLES GLOBALES */
+/* Variables CSS para colores */
+:root {
+    --azulFondo: #000F1F;
+    /* Color de fondo principal */
+    --barraBusqueda: #265973;
+    /* Color de fondo para la barra de búsqueda */
+    --letraseiconos: #CCFFFF;
+    /* Color para letras e iconos */
+    --accionBoton: #26A3D9;
+    /* Color para acciones de botón */
+}
+
+/* CONFIGURACIONES GENERALES */
+/* Configuración global para el HTML */
+html {
+    font-size: 65.5%;
+    /* Tamaño base de fuente */
+    box-sizing: border-box;
+    /* Incluye padding y borde en el cálculo de ancho */
+}
+
+/* Aplica box-sizing a todos los elementos y pseudo-elementos */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /* Hereda box-sizing del elemento padre */
+}
+
+/* ESTILOS PARA EL BODY */
+/* Estilos generales del cuerpo de la página */
+body {
+    padding-top: 5rem;
+    /* Espaciado superior */
+    padding-left: 10rem;
+    /* Espaciado izquierdo */
+    padding-right: 10rem;
+    /* Espaciado derecho */
+    font-family: "Space Mono", monospace;
+    /* Fuente de texto */
+    background-color: var(--azulFondo);
+    /* Color de fondo */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    color: var(--letraseiconos);
+    /* Color de texto */
+}
+
+/* SECCIÓN DE TÍTULO Y BÚSQUEDA */
+/* Estilos para el contenedor del título */
+.titulo-eliminar {
+    display: flex;
+    /* Uso de flexbox para el layout */
+    flex-direction: row;
+    /* Dirección de los elementos en fila */
+    align-items: center;
+    /* Alineación vertical de los elementos */
+    justify-content: space-between;
+    /* Distribución del espacio entre los elementos */
+}
+
+/* Estilos para la barra de búsqueda */
+.barra-busqueda-eliminar {
+    padding: 0;
+    /* Sin espaciado interno */
+    display: flex;
+    /* Uso de flexbox para el layout */
+    align-items: center;
+    /* Alineación vertical de los elementos */
+    justify-content: center;
+    /* Centrado de los elementos */
+    background-color: var(--barraBusqueda);
+    /* Color de fondo */
+    height: 5rem;
+    /* Altura fija */
+    width: 100%;
+    /* Ancho completo */
+    max-width: 400px;
+    /* Ancho máximo */
+}
+
+/* Estilos para el input de búsqueda */
+.buscar-eliminar {
+    color: var(--letraseiconos);
+    /* Color del texto */
+    font-family: "Space Mono", monospace;
+    /* Fuente de texto */
+    width: 90%;
+    /* Ancho relativo al contenedor */
+    padding: 5px 8px;
+    /* Espaciado interno */
+    border: none;
+    /* Sin borde */
+    outline: none;
+    /* Sin contorno al enfocarse */
+    background-color: transparent;
+    /* Fondo transparente */
+    font-size: 1.5rem;
+    /* Tamaño de fuente */
+}
+
+/* Estilos para el placeholder del input de búsqueda */
+.buscar-eliminar::placeholder {
+    font-family: "Space Mono", monospace;
+    /* Fuente del placeholder */
+    color: var(--letraseiconos);
+    /* Color del placeholder */
+}
+
+/* Ajusta el tamaño del ícono dentro de la barra de búsqueda */
+.barra-busqueda-eliminar svg {
+    width: 25px;
+    /* Ancho del ícono */
+    height: 25px;
+    /* Altura del ícono */
+    margin-right: 0.8rem;
+    /* Margen derecho */
+    margin-left: 0.8rem;
+    /* Margen izquierdo */
+}
+
+/* Aplica borde cuando el input dentro de .barra-busqueda-eliminar tiene foco */
+.barra-busqueda-eliminar:focus-within {
+    border: 2px solid var(--accionBoton);
+    /* Borde visible al enfocarse */
+}
+
+/* ESTILOS DE LA TABLA */
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    /* Ancho completo */
+    border-collapse: collapse;
+    /* Colapsa los bordes */
+    border: 2px solid var(--barraBusqueda);
+    /* Borde de la tabla */
+}
+
+/* Estilos para celdas de la tabla */
+th,
+td {
+    padding: 8px;
+    /* Espaciado interno de celdas */
+    text-align: left;
+    /* Alineación del texto a la izquierda */
+}
+
+/* Estilos para las filas de la tabla */
+tr {
+    border-bottom: 1px solid var(--barraBusqueda);
+    /* Borde inferior de las filas */
+}
+
+/* Remueve el borde superior del primer tr en thead */
+thead tr:first-child {
+    border-top: none;
+}
+
+/* Remueve el borde inferior del último tr en tbody */
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* BOTÓN DE ELIMINACIÓN */
+/* Estilos para el botón de eliminación */
+.btn-eliminar {
+    font-family: "Space Mono", monospace;
+    /* Fuente del botón */
+    padding: 5px 10px;
+    /* Espaciado interno */
+    background-color: var(--azulFondo);
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border: 2px solid var(--barraBusqueda);
+    /* Borde */
+}
+
+/* Cambio de fondo al pasar el cursor sobre el botón de eliminación */
+.btn-eliminar:hover {
+    background-color: var(--accionBoton);
+    /* Color de fondo al pasar el cursor */
+}
+
+/* FORMULARIO DE ELIMINACIÓN */
+/* Estilos para la sección de eliminación */
+.formulario-eliminar {
+    padding: 0rem 30rem;
+    /* Espaciado a los lados */
+}
+
+/* Estilos para el contenedor de datos de eliminación */
+.grupo-datos-eliminar {
+    display: flex;
+    /* Uso de flexbox para el layout */
+    flex-direction: row;
+    /* Dirección de los elementos en fila */
+    align-items: center;
+    /* Alineación vertical */
+}
+
+/* Estilos para los elementos específicos dentro del grupo de datos de eliminación */
+.campo-especifico-eliminar {
+    display: flex;
+    /* Uso de flexbox para el layout */
+    flex-direction: column;
+    /* Dirección de los elementos en columna */
+    padding-bottom: 2.5rem;
+    /* Espaciado inferior */
+    width: 95%;
+    /* Ancho completo */
+}
+
+/* Espaciado inferior para las etiquetas dentro del grupo de datos de eliminación */
+.grupo-datos-eliminar label {
+    padding-bottom: 0.5rem;
+}
+
+/* Estilos para inputs y selects dentro del grupo de datos de eliminación */
+.grupo-datos-eliminar input,
+.grupo-datos-eliminar select {
+    height: 4rem;
+    /* Altura de los inputs */
+    background-color: var(--azulFondo);
+    /* Color de fondo */
+    color: var(--letraseiconos);
+    /* Color del texto */
+    font-family: "Space Mono", monospace;
+    /* Fuente */
+    width: 27.5rem;
+    /* Ancho fijo */
+    border: 2px solid var(--barraBusqueda);
+    /* Borde */
+    padding: 0 1rem;
+    /* Espaciado interno */
+}
+
+/* Ancho completo para inputs con clase campo-password-eliminar */
+.grupo-datos-eliminar .campo-password-eliminar {
+    width: 100%;
+    /* Ancho completo */
+}
+
+/* Estilos para el placeholder de inputs con clase campo-texto-eliminar */
+.campo-texto-eliminar::placeholder {
+    color: var(--letraseiconos);
+    /* Color del placeholder */
+}
+
+/* Estilos al enfocar inputs con clase campo-texto-eliminar */
+.campo-texto-eliminar:focus {
+    border-color: var(--letraseiconos);
+    /* Color del borde */
+    outline: none;
+    /* Sin contorno */
+}
+
+/* BOTÓN DEL FORMULARIO DE ELIMINACIÓN */
+/* Estilos para el botón de eliminar dentro del formulario */
+.btn-eliminar-formulario {
+    height: 4rem;
+    /* Altura del botón */
+    width: 95%;
+    /* Ancho completo */
+    justify-content: space-between;
+    /* Distribución del espacio */
+    background-color: var(--accionBoton);
+    /* Color de fondo */
+    color: var(--letraseiconos);
+    /* Color del texto */
+    font-family: "Space Mono", monospace;
+    /* Fuente */
+    font-size: 1.2rem;
+    /* Tamaño de fuente */
+    margin-top: 1rem;
+    /* Margen superior */
+}
+
+/* Cambio de fondo al pasar el cursor sobre el botón eliminar del formulario */
+.btn-eliminar-formulario:hover {
+    background-color: var(--accionBoton);
+}
