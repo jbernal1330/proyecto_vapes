@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
+// localhost:8080/userController/user
 public class UserController {
     @Autowired
     private UserRepository userRepository;
