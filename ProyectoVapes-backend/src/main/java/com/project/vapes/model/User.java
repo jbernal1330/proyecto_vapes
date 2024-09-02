@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.vapes.token.Token;
 
 import jakarta.persistence.Column;
@@ -36,6 +37,7 @@ public class User implements UserDetails {
     private String password;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Token> tokens;
 
     @Enumerated(EnumType.STRING)

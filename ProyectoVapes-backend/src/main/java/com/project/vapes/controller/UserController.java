@@ -27,7 +27,7 @@ public class UserController {
 
     @GetMapping("/users")
     List<User> getAllUsers() {
-        return userRepository.findAll();
+        return (List<User>) userRepository.findAll();
     }
 
     @GetMapping("users/count")
