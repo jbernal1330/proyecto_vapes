@@ -54,6 +54,43 @@
         </table>
     </div>
 
+    <!-- Sección para visualizar un empleado -->
+    <div class="formulario-visualizar">
+        <h2>Visualizacion empleados</h2> <!-- Subtítulo de la sección -->
+
+        <form>
+            <!-- Grupo de campos para el nombre y apellido del empleado -->
+            <div class="grupo-datos-visualizar">
+                <!-- Campo para mostrar el nombre del empleado -->
+                <div class="campo-especifico-visualizar">
+                    <label>Nombre del empleado</label> <!-- Etiqueta para el nombre -->
+                    <input type="text" placeholder="Primer nombre" class="campo-texto-visualizar" readonly>
+                    <!-- Input para mostrar el nombre del empleado -->
+                </div>
+                <!-- Campo para mostrar el apellido del empleado -->
+                <div class="campo-especifico-visualizar">
+                    <label>Apellido del empleado</label> <!-- Etiqueta para el apellido -->
+                    <input type="text" placeholder="Primer apellido" class="campo-texto-visualizar" readonly>
+                    <!-- Input para mostrar el apellido del empleado -->
+                </div>
+            </div>
+
+            <!-- Grupo de campos para el ID y rol del empleado -->
+            <div class="grupo-datos-visualizar">
+                <!-- Campo para mostrar el ID del empleado -->
+                <div class="campo-especifico-visualizar">
+                    <label>ID</label> <!-- Etiqueta para el ID -->
+                    <input type="text" placeholder="Cédula del empleado" class="campo-texto-visualizar" readonly>
+                    <!-- Input para mostrar el ID del empleado -->
+                </div>
+                <!-- Campo para mostrar el ID del empleado -->
+                <div class="campo-especifico-visualizar">
+                    <label>Rol del empleado</label> <!-- Etiqueta para el ID -->
+                    <input type="text" placeholder="Rol del empleado" class="campo-texto-visualizar" readonly>
+                    <!-- Input para mostrar el ID del empleado -->
+            </div>
+        </form>
+    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -99,6 +136,16 @@ async function loadEmployees() {
         const button = document.createElement('button');
         button.className = 'btn-visualizar';
         button.textContent = 'Visualizar';
+
+        // Agregar un manejador de eventos al botón para mostrar los detalles del empleado
+        button.addEventListener('click', () => {
+                // Actualiza el formulario de visualización con los detalles del empleado
+                document.querySelector('input[placeholder="Primer nombre"]').value = employee.fname;
+                document.querySelector('input[placeholder="Primer apellido"]').value = employee.lname;
+                document.querySelector('input[placeholder="Cédula del empleado"]').value = employee.id;
+                document.querySelector('input[placeholder="Rol del empleado"]').value = employee.role;
+            });
+
         // Aquí puedes agregar un manejador de eventos para el botón si es necesario
         actionCell.appendChild(button);
         row.appendChild(actionCell);

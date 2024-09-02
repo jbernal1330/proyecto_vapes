@@ -177,7 +177,7 @@ tbody tr:last-child {
     /* Borde */
 }
 
-/* Cambio de fondo al pasar el cursor sobre el botón de eliminación */
+/* Cambio de fondo al pasar el cursor sobre el botón de visualización */
 .btn-eliminar:hover {
     background-color: var(--accionBoton);
     /* Color de fondo al pasar el cursor */

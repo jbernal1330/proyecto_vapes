@@ -48,17 +48,8 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody>
-                {% for row in data %} <!-- Bucle para generar filas dinámicamente -->
-                <tr>
-                    <td>{{ row[0] }}</td> <!-- Nombre del empleado -->
-                    <td>{{ row[1] }}</td> <!-- Apellido del empleado -->
-                    <td>{{ row[2] }}</td> <!-- ID del empleado -->
-                    <td>{{ row[3] }}</td> <!-- Rol del empleado -->
-                    <td>{{ row[4] }}</td> <!-- Contraseña del empleado -->
-                    <td><button class="btn-eliminar">Eliminar</button></td> <!-- Botón para eliminar el empleado -->
-                </tr>
-                {% endfor %} <!-- Fin del bucle -->
+            <tbody id="employee-table-body">
+                <!-- JavaScript mapea los usuarios -->>
             </tbody>
         </table>
     </div>
@@ -112,12 +103,69 @@
                     <!-- Input para mostrar la contraseña del empleado -->
                 </div>
             </div>
-
-            <!-- Botón para enviar el formulario -->
-            <button type="submit" class="btn-eliminar-formulario">Eliminar</button>
-            <!-- Botón para eliminar el empleado -->
         </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+    
+    async function loadEmployees() {
+        try {
+          const response = await axios.get('http://localhost:8080/users');
+          const employees = response.data; // Suponiendo que la respuesta es un array de empleados
+    
+          const tableBody = document.getElementById('employee-table-body');
+    
+          // Limpia el contenido actual del tbody (en caso de que quieras actualizar)
+          tableBody.innerHTML = '';
+          console.log(employees);
+    
+          // Itera sobre cada empleado y crea una nueva fila en la tabla
+          employees.forEach(employee => {
+            const row = document.createElement('tr');
+    
+            // Crear las celdas para cada atributo del empleado
+            const nameCell = document.createElement('td');
+            nameCell.textContent = employee.fname;
+            row.appendChild(nameCell);
+    
+            const lastNameCell = document.createElement('td');
+            lastNameCell.textContent = employee.lname;
+            row.appendChild(lastNameCell);
+    
+            const idCell = document.createElement('td');
+            idCell.textContent = employee.id;
+            row.appendChild(idCell);
+    
+            const roleCell = document.createElement('td');
+            roleCell.textContent = employee.role;
+            row.appendChild(roleCell);
+    
+            const passwordCell = document.createElement('td');
+            passwordCell.textContent = employee.password; // Asegúrate de manejar la seguridad de mostrar contraseñas
+            row.appendChild(passwordCell);
+    
+            const actionCell = document.createElement('td');
+            const button = document.createElement('button');
+            button.className = 'btn-eliminar';
+            button.textContent = 'Eliminar';
+            // Aquí puedes agregar un manejador de eventos para el botón si es necesario
+            actionCell.appendChild(button);
+            row.appendChild(actionCell);
+    
+            // Agrega la fila al cuerpo de la tabla
+            tableBody.appendChild(row);
+          });
+    
+        } catch (error) {
+          console.error('Error fetching employee data:', error);
+        }
+      }
+    
+      // Llamar a la función para cargar los empleados cuando la página haya cargado
+      window.onload = loadEmployees;
+    </script>
 
 </body>
 
