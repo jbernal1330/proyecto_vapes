@@ -37,6 +37,9 @@ function sendLoginData() {
     const username = document.getElementById('ID').value;
     const password = document.getElementById('password').value;
 
+    localStorage.setItem("access_token", userData.access_token);
+    console.log("Token guardado en LocalStorage:", userData.access_token);
+
     const data = {
         username: username,
         password: password

@@ -43,7 +43,7 @@ function sendRegisterData() {
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const password = document.getElementById('password').value;
-
+    
     const data = {
         id: id,
         fname: firstName,
@@ -55,6 +55,8 @@ function sendRegisterData() {
     axios.post('http://localhost:8080/userAuth/register', data)
         .then(response => {
             console.log('Registration successful:', response.data);
+            localStorage.setItem("access_token", response.data.access_token);
+            console.log("Token guardado en LocalStorage:", response.data.access_token);
             // Redireccionar a index.html
             window.location.href = 'index.html';
         })
