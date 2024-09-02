@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modificar Inventario</title>
+<link rel="stylesheet" href="stylesJuanH.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Modificar Inventario</h1>
+        <input type="text" id="search-input" placeholder="Buscar producto...">
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>ID</th>
+                <th>Nicotina</th>
+                <th>Sabor</th>
+                <th>Tamaño</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><button type="button" id="Edit" data-id="placeholder3" onclick="editProduct(this)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="form-container">
+        <h2>Modificar Producto</h2>
+        <form>
+            <div class="input-group">
+                <label for="product-name">Nombre del producto</label>
+                <input type="text" id="product-name" placeholder="Ingrese el nombre">
+            </div>
+            <div class="input-group">
+                <label for="quantity">Cantidad</label>
+                <input type="number" id="quantity" placeholder="Ingrese la cantidad">
+            </div>
+            <div class="input-group">
+                <label for="price">Precio</label>
+                <input type="text" id="price" placeholder="Ingrese el precio">
+            </div>
+            <div class="input-group">
+                <label for="product-type">Tipo de producto</label>
+                <select id="product-type">
+                    <option value="">Seleccione el tipo</option>
+                    <option value="vape">Vape</option>
+                    <option value="cigarro">Cigarro</option>
+                    <option value="accesorio">Accesorio</option>
+                </select>
+            </div>
+            <div class="input-group full-width">
+                <label for="unique-id">ID único</label>
+                <input type="text" id="unique-id" placeholder="Ingrese el ID">
+            </div>
+            <div class="input-group full-width">
+                <label><input type="checkbox" id="nicotine"> Contiene nicotina</label>
+            </div>
+            <div class="input-group">
+                <label for="flavor">Sabor</label>
+                <input type="text" id="flavor" placeholder="Ingrese el sabor">
+            </div>
+            <div class="input-group">
+                <label for="size">Tamaño</label>
+                <input type="text" id="size" placeholder="Ingrese el tamaño">
+            </div>
+            <button type="submit">Agregar</button>
+        </form>
+    </div>    
+</body>
+</html>

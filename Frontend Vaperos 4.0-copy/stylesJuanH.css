@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #FFFFFF; /* Bright white text */
+    background-color: #0D1117; /* Very dark background */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px; /* Maximum width of the container */
+    box-sizing: border-box;
+    background-color: #161b2200; /* Transparent dark background for overall container */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering content within the container */
+    margin-bottom: 30px; /* Space between the container and anything below it */
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* Spaces the title and search bar on opposite ends */
+    align-items: center; /* Vertically aligns elements in the header */
+    width: 100%; /* Match container width */
+    max-width: 1200px; /* Maximum width to align with the container */
+    margin: 0 auto; /* Centers the header within the body */
+    padding: 0 20px; /* Padding to align with the table's padding */
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #C9D1D9; /* Light gray text */
+    margin-bottom: 10px; /* Added space below the table before the form starts */
+}
+
+table, th, td {
+    border: 1px solid #30363D; /* Darker gray border */
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #161B22; /* Header background */
+}
+
+label {
+    color: #C9D1D9; /* Light gray for readability */
+    display: block; /* Ensure labels are full-width */
+}
+
+input[type="text"], input[type="number"], select {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: #0D1117; /* Match body background */
+    border: 1px solid #30363D; /* Dark gray border */
+    color: #C9D1D9; /* Light gray text */
+}
+
+#search-input {
+    padding: 8px;
+    padding-left: 30px; /* Make room for the icon inside the input */
+    border: 1px solid #30363D;
+    background-color: #0D1117;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 16 16"><path d="M11.742 10.344A6.5 6.5 0 1 0 8 16a6.5 6.5 0 0 0 3.742-1.657l3.858 3.858a1 1 0 0 0 1.415-1.414l-3.858-3.858zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>'); /* SVG icon */
+    background-repeat: no-repeat;
+    background-position: 8px center; /* Position the icon inside the left padding area */
+    color: #C9D1D9;
+    width: 300px;
+}
+
+button#Edit {
+    width: 100%; /* Makes the button fill the entire width of the cell */
+    height: 100%; /* Makes the button fill the entire height of the cell */
+    padding: 10px 0; /* Adds padding for better button text visibility and click area */
+    color: #FFFFFF;
+    background-color: #232586;
+    border: none;
+    cursor: pointer;
+}
+
+button#Edit:hover {
+    background-color: #232586; /* Slightly lighter green on hover */
+}
+
+input[type="checkbox"] {
+    margin: 10px 2px 10px 0;
+}
+
+button {
+    padding: 8px 16px;
+    color: #FFFFFF;
+    background-color: #232586;
+    border: none;
+    cursor: pointer;
+    grid-column: span 2;
+}
+
+button:hover {
+    background-color: #232586; /* Slightly lighter green on hover */ 
+}
+
+.form-container {
+    width: auto; /* Adjust width based on content */
+    max-width: 500px; /* Maximum width of the form */
+    background-color: #161b2218; /* Slightly transparent dark background for the form */
+    padding: 20px;
+    border: 1px solid #30363d00; /* Invisible border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 10px; /* Ensure space above the form */
+}
+
+h1 {
+    color: #58A6FF; /* Light blue for headers */
+}
+
+h2 {
+    color: #58A6FF; /* Light blue for form title */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group.full-width {
+    grid-column: span 2;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
