@@ -1,0 +1,2 @@
+cd C:\Users\USUARIO\Documents\MicrosoftVisualStudio\8-USA\Arquitectura de Software\Vaperos GIT\Frontend Vaperos 4.0-copy
+python -m http.server 3000

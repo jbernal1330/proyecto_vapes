@@ -27,19 +27,19 @@
         <h2>Agregar usuario</h2> <!-- Subtítulo de la sección -->
 
         <!-- Formulario para agregar un usuario -->
-        <form>
+        <form onsubmit="event.preventDefault(); sendRegisterData();">
             <!-- Grupo de campos para el nombre y apellido del empleado -->
             <div class="grupo-datos-agregar">
                 <!-- Campo para ingresar el nombre del empleado -->
                 <div class="campo-especifico-agregar">
                     <label>Nombre del empleado</label> <!-- Etiqueta para el nombre -->
-                    <input type="text" placeholder="Primer nombre" class="campo-texto-agregar">
+                    <input type="text" placeholder="Primer nombre" id="firstName" class="campo-texto-agregar">
                     <!-- Input para el nombre del empleado -->
                 </div>
                 <!-- Campo para ingresar el apellido del empleado -->
                 <div class="campo-especifico-agregar">
                     <label>Apellido del empleado</label> <!-- Etiqueta para el apellido -->
-                    <input type="text" placeholder="Primer apellido" class="campo-texto-agregar">
+                    <input type="text" placeholder="Primer apellido" id="lastName" class="campo-texto-agregar">
                     <!-- Input para el apellido del empleado -->
                 </div>
             </div>
@@ -49,16 +49,16 @@
                 <!-- Campo para ingresar el ID del empleado -->
                 <div class="campo-especifico-agregar">
                     <label>ID</label> <!-- Etiqueta para el ID -->
-                    <input type="text" placeholder="Cédula del empleado" class="campo-texto-agregar">
+                    <input type="text" placeholder="Cédula del empleado" id="ID" class="campo-texto-agregar">
                     <!-- Input para el ID del empleado -->
                 </div>
                 <!-- Selector para elegir el rol del empleado -->
                 <div class="campo-especifico-agregar">
                     <label>Rol del empleado</label> <!-- Etiqueta para el rol -->
-                    <select class="campo-texto-agregar"> <!-- Selector para el rol del empleado -->
+                    <select class="campo-texto-agregar" id="role"> <!-- Selector para el rol del empleado -->
                         <option value="">Rol del empleado</option> <!-- Opción vacía por defecto -->
-                        <option value="tipo1">user</option> <!-- Opción para el rol de usuario -->
-                        <option value="tipo2">admin</option> <!-- Opción para el rol de administrador -->
+                        <option value="USER">USER</option> <!-- Opción para el rol de usuario -->
+                        <option value="ADMIN">ADMIN</option> <!-- Opción para el rol de administrador -->
                     </select>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="grupo-datos-agregar">
                 <div class="campo-especifico-agregar">
                     <label>Contraseña</label> <!-- Etiqueta para la contraseña -->
-                    <input type="password" placeholder="Contraseña del empleado" class="campo-password-agregar">
+                    <input type="password" placeholder="Contraseña del empleado" id="password" class="campo-password-agregar">
                     <!-- Input para la contraseña del empleado -->
                 </div>
             </div>
@@ -77,6 +77,39 @@
             <!-- Botón para agregar el usuario -->
         </form>
     </div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+function sendRegisterData() {
+    const id = document.getElementById('ID').value;
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const password = document.getElementById('password').value;
+    const role = document.getElementById('role').value;
+
+    console.log("Rol tomado: ", role);
+
+    const data = {
+        id: id,
+        fname: firstName,
+        lname: lastName,
+        password: password,
+        role: role,
+    };
+
+    axios.post('http://localhost:8080/userAuth/register', data)
+        .then(response => {
+            console.log('Registration successful:', response.data);
+            // Redireccionar a index.html
+            window.location.href = 'index.html';
+        })
+        .catch(error => {
+            console.error('Error during registration:', error);
+        });
+}
+    
+</script>
 
 </body>
 
